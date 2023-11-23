@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Roboto:wght@500&display=swap');
+
+.header {
+    min-height: 156px;
+    background: rgb(230, 216, 91);
+    background: linear-gradient(90deg, rgb(237, 113, 107) 4%, rgb(210, 111, 104) 49%, rgba(232, 68, 108) 94%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    &-name{
+      font-family: 'Courier Prime', monospace;
+      font-size: 70px;
+      font-weight: 400;
+      color: #0b051d;
+      border-right: 4px solid #080808;
+      animation: cursor 1s infinite step-end;
+
+      @keyframes cursor{
+        0%, 100%{border-color: transparent;}
+        50%{border-color: #000;}
+      }
+
+      animation: cursor 1s infinite step-end, typing 15s infinite steps(7);
+      white-space: nowrap;
+      overflow: hidden;      
+      @keyframes typing{
+        0%{ width: 0ch} 
+        30%{ width: 7ch;} 
+        80%{ width: 7ch;} 
+        90%{ width: 0ch;} 
+        100%{ width: 0ch;} 
+      }
+    }
+  }

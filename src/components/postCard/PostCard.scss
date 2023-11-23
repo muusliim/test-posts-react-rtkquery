@@ -1,0 +1,88 @@
+@import '../../App.scss';
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+
+
+
+.card {
+    background-color: rgb(253, 253, 253);
+    border-radius: 6px;
+    box-shadow:  rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-left: 10px solid rgb(237, 113, 107);
+  }
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.divider{
+    border: 1px solid black;
+    width: 50%;
+    margin: 10px auto
+}
+
+.text {
+    margin-top: 2rem;
+    font-size: 18px;
+    font-weight: 400;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 900;
+    font-family: 'Niconne', cursive;
+    color: #f15656;
+    text-shadow: 1.5px 1px 0px  rgb(9, 21, 29),
+}
+.button-wrapper{
+    width: 200px;
+    margin: 1rem auto;
+}
+.button {
+    display: inline-block;
+    width: 100%;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(232, 68, 108);
+      border-radius: 10rem;
+      z-index: -2;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: darken(rgb(232, 68, 108), 15%);
+      transition: all .3s;
+      border-radius: 10rem;
+      z-index: -1;
+    }
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+}
