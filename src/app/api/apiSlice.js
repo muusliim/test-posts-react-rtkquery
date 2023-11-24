@@ -17,9 +17,12 @@ export const apiSlice = createApi({
               forceRefetch({ currentArg, previousArg }) {
                 return currentArg !== previousArg
               },
-            })
+            }),
+          getPostById: builder.query({
+            query: (id) => `posts?id=${id}`
+          })
         })
     })
 
 
-export const {useGetPostsQuery} = apiSlice;
+export const {useGetPostsQuery, useGetPostByIdQuery} = apiSlice;

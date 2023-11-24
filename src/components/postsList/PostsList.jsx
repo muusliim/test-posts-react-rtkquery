@@ -9,18 +9,15 @@ function PostsList() {
   // получение данных
   const {data: posts = [], isFetching, isLoading} = useGetPostsQuery(page);
 
-  console.log(posts);
-
   useEffect(() => {
     const onScroll = (e) => {
       const scrolledToBottom =
         e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop +  window.innerHeight) < 100;
-        console.log(scrolledToBottom);
       if (scrolledToBottom && !isFetching) {
-        console.log("Fetching more data...");
         setPage(page + 1);
       }
     };
+    
     document.addEventListener("scroll", onScroll);
 
     return function () {

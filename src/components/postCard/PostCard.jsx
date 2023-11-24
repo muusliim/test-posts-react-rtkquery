@@ -1,9 +1,12 @@
 import './PostCard.scss';
+import { useNavigate } from 'react-router';
 
 
 function PostCard({title, body, userId, id}) {
 
-    const shortBody = body.length > 100 ? body.slice(0, 100) + '...' : body;
+    const navigate = useNavigate();
+
+    const shortBody = body.length > 100 ? body.slice(0, 70) + '...' : body;
 
   return (
     <div className='card'>
@@ -17,12 +20,14 @@ function PostCard({title, body, userId, id}) {
                     {title}
                 </h1>
                 <div className="text">
-
                     {shortBody}
                 </div>
             </div>
             <div className="button-wrapper">
-                <button className="button">
+                <button 
+                    className="button"
+                    onClick={() => navigate(`/post/id${id}`)}
+                    >
                     Просмотр
                 </button>
             </div>

@@ -14,6 +14,9 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    &-solo{
+      margin-top: 4rem;
+    }
 }
 
 .divider{
@@ -24,7 +27,7 @@
 
 .text {
     margin-top: 2rem;
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 400;
     &::first-letter {
       text-transform: uppercase;
